@@ -89,7 +89,14 @@ RUN apt-get install -y --no-install-recommends \
     mariadb-client \
     nginx=${NGINX_VERSION} \
     nscd
-
+    
+RUN apt-get install -y --no-install-recommends \
+    mc \
+    mariadb-server \
+    proftpd-mod-mysql \
+    dovecot-mysql \
+    postfix-mysql
+    
 # ======================================================================================================================
 # PHP
 # ======================================================================================================================
