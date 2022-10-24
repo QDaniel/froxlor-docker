@@ -14,7 +14,7 @@ echo "${TZ}" > /etc/timezone
 cron
 named
 nginx
-
+service mariadb start
 service php${PHP_VERSION_1}-fpm start
 service php${PHP_VERSION_2}-fpm start
 service php${PHP_VERSION_3}-fpm start
