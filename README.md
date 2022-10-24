@@ -29,10 +29,11 @@ version: '2.4'
 
 services:
   froxlor:
-    image: bloodhunterd/froxlor
+    image: qdaniel/froxlor-docker
     ports:
       - '80:80'
       - '443:443'
+      - '127.0.0.1:3306:3306'
     restart: unless-stopped
     volumes:
       - ./froxlor/:/var/www/froxlor/
@@ -41,6 +42,8 @@ services:
       - ./customers/webs:/var/customers/webs/
       - ./.acme.sh/:/root/.acme.sh/
       - ./ssl/:/etc/ssl/froxlor/
+      - ./mysql/data/:/var/lib/mysql/
+      - ./mysql/etc/:/etc/mysql/
 ~~~
 
 ### Configuration
